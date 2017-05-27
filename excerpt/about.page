@@ -1,0 +1,34 @@
+---
+title: Excerpt Property
+description: Add manual post excerpt feature.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.0
+...
+
+### Usage
+
+How to enable the manual post excerpt:
+
+~~~ .yaml
+---
+title: Post Title
+description: Post description.
+author: Taufik Nurrohman
+type: Markdown
+...
+
+This paragraph is going to be the post excerpt.
+
+<!-- cut -->
+
+Rest of the post content goes here.
+~~~
+
+To show the manual post excerpt in your shield:
+
+~~~ .php
+echo $page->excerpt;
+~~~
+
+<!-- block:donate -->
