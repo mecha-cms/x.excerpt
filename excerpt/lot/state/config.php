@@ -2,5 +2,5 @@
 
 return [
     'cut' => '<!-- cut -->',
-    'anchor' => 'more:%{id}%'
+    'anchor' => 'more:%s'
 ];
