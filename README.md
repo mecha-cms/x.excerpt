@@ -1,4 +1,4 @@
-Excerpt Property Plugin for Mecha
-=================================
+Excerpt Property Extension for Mecha
+====================================
 
 > Add manual post excerpt feature.

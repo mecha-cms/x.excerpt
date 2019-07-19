@@ -3,7 +3,10 @@ title: Excerpt Property
 description: Add manual post excerpt feature.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.4
+version: 1.0.5
+
+use:
+  '.\lot\x\page': 1
 ...
 
 ### Usage
@@ -25,10 +28,8 @@ This paragraph is going to be the post excerpt.
 Rest of the post content goes here.
 ~~~
 
-To show the manual post excerpt in your shield:
+To show the manual post excerpt in your skin:
 
 ~~~ .php
 echo $page->excerpt;
 ~~~
-
-<!-- block:donate -->
