@@ -3,7 +3,7 @@ title: Excerpt Property
 description: Add manual post excerpt feature.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.5
+version: 1.0.6
 
 use:
   '.\lot\x\page': 1
