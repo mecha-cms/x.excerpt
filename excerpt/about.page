@@ -1,9 +1,9 @@
 ---
-title: Excerpt Property
-description: Add manual post excerpt feature.
+title: Page Excerpt
+description: Add manual page excerpt feature.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.6
+version: 1.0.7
 
 use:
   '.\lot\x\page': 1
@@ -11,7 +11,7 @@ use:
 
 ### Usage
 
-How to enable the manual post excerpt:
+How to enable the page excerpt manually:
 
 ~~~ .yaml
 ---
@@ -21,15 +21,27 @@ author: Taufik Nurrohman
 type: Markdown
 ...
 
-This paragraph is going to be the post excerpt.
+This paragraph is going to be the page excerpt.
 
 <‌!-- cut --‌>
 
-Rest of the post content goes here.
+Rest of the page content goes here.
 ~~~
 
-To show the manual post excerpt in your skin:
+To show the manual page excerpt in your layout:
 
 ~~~ .php
-echo $page->excerpt;
+<?php foreach ($pages as $page): ?>
+<article>
+  <h3>
+    <?= $page->title; ?>
+  </h3>
+  <?= $page->excerpt; ?>
+  <p>
+    <a href="<?= $page->url; ?>">
+      Read More
+    </a>
+  </p>
+</article>
+<?php endforeach; ?>
 ~~~
