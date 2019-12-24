@@ -1,4 +1,9 @@
 Excerpt Property Extension for Mecha
 ====================================
 
-> Add manual post excerpt feature.
+Release Notes
+-------------
+
+### 1.0.8
+
+ - Small bug fixes.

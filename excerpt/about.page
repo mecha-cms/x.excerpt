@@ -3,7 +3,7 @@ title: Page Excerpt
 description: Add manual page excerpt feature.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.7
+version: 1.0.8
 
 use:
   '.\lot\x\page': 1
@@ -38,7 +38,7 @@ To show the manual page excerpt in your layout:
   </h3>
   <?= $page->excerpt; ?>
   <p>
-    <a href="<?= $page->url; ?>">
+    <a href="<?= $page->url; ?>#next:<?= $page->id; ?>">
       Read More
     </a>
   </p>

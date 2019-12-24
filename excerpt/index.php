@@ -21,11 +21,13 @@ namespace _\lot\x {
 
 namespace _\lot\x\excerpt {
     function anchor($content) {
-        extract(\State::get('x.excerpt', true), \EXTR_SKIP);
+        $state = \State::get('x.excerpt', true);
+        $cut = $state['cut'];
+        $anchor = $state['anchor'][0];
         if (empty($cut) || \State::is('pages') || false === \strpos($content, $cut)) {
             return $content;
         }
-        return \implode('<div class="fi" id="' . \sprintf($anchor, $this->id) . '"></div>', \explode($cut, $content, 2));
+        return \implode('<span class="fi" id="' . \sprintf($anchor, $this->id) . '"></span>', \explode($cut, $content, 2));
     }
     \Hook::set('page.content', __NAMESPACE__ . "\\anchor", 2.1);
 }
