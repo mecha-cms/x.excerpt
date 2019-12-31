@@ -30,7 +30,7 @@ Rest of the page content goes here.
 
 To show the manual page excerpt in your layout:
 
-~~~ .php
+~~~ .html
 <?php foreach ($pages as $page): ?>
 <article>
   <h3>
