@@ -14,7 +14,8 @@ namespace _\lot\x {
             return $this->description ?? \To::excerpt((string) $content);
         }
         // Return the first part!
-        return \trim(\explode($cut, $content)[0]);
+        $content = \trim(\explode($cut, $content)[0]);
+        return "" !== $content ? $content : null;
     }
     \Hook::set('page.excerpt', __NAMESPACE__ . "\\excerpt", 2.1);
 }
