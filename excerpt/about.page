@@ -3,7 +3,7 @@ title: Page Excerpt
 description: Add manual page excerpt feature.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.9
+version: 1.0.10
 
 use:
   '.\lot\x\page': 1

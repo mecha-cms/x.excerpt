@@ -1,6 +1,6 @@
 <?php
 
-namespace _\lot\x {
+namespace x {
     function excerpt($content) {
         // `excerpt` data has been set
         if ($content) {
@@ -20,7 +20,7 @@ namespace _\lot\x {
     \Hook::set('page.excerpt', __NAMESPACE__ . "\\excerpt", 2.1);
 }
 
-namespace _\lot\x\excerpt {
+namespace x\excerpt {
     function anchor($content) {
         $state = \State::get('x.excerpt', true);
         $cut = $state['cut'];
