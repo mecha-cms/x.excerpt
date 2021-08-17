@@ -23,7 +23,7 @@ type: Markdown
 
 This paragraph is going to be the page excerpt.
 
-<‌!-- cut --‌>
+<!-- cut -->
 
 Rest of the page content goes here.
 ~~~
