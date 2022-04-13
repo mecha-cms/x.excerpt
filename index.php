@@ -6,7 +6,7 @@ namespace x {
         if ($excerpt) {
             return $excerpt; // Return the initial value
         }
-        extract($GLOBALS, \EXTR_SKIP);
+        \extract($GLOBALS, \EXTR_SKIP);
         $content = $this->content;
         $cut = $state->x->excerpt->cut ?? "";
         // Excerpt cropper does not exist, return the page’s `description`
@@ -26,7 +26,7 @@ namespace x\excerpt {
         if (!$content) {
             return $content;
         }
-        extract($GLOBALS, \EXTR_SKIP);
+        \extract($GLOBALS, \EXTR_SKIP);
         if ($state->is('pages')) {
             return $content;
         }
