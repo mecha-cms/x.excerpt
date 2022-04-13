@@ -1,9 +1,9 @@
 ---
-title: Page Excerpt
+title: Excerpt
 description: Add manual page excerpt feature.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.10
+version: 1.1.0
 
 use:
   '.\lot\x\page': 1
@@ -32,16 +32,16 @@ To show the manual page excerpt in your layout:
 
 ~~~ .html
 <?php foreach ($pages as $page): ?>
-<article>
-  <h3>
-    <?= $page->title; ?>
-  </h3>
-  <?= $page->excerpt; ?>
-  <p>
-    <a href="<?= $page->url; ?>#next:<?= $page->id; ?>">
-      Read More
-    </a>
-  </p>
-</article>
+  <article>
+    <h3>
+      <?= $page->title; ?>
+    </h3>
+    <?= $page->excerpt; ?>
+    <p>
+      <a href="<?= $page->url; ?>#next:<?= $page->id; ?>">
+        <?= i('Read More'); ?>
+      </a>
+    </p>
+  </article>
 <?php endforeach; ?>
 ~~~
