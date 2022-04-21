@@ -23,7 +23,7 @@ namespace x {
 }
 
 namespace x\excerpt {
-    function anchor($content) {
+    function next($content) {
         if (!$content) {
             return $content;
         }
@@ -33,8 +33,8 @@ namespace x\excerpt {
         }
         $excerpt = \trim(\preg_replace('/\s*<[a-z\d:-]+(?:\s[^>]*)?>\s*$/', "", \substr($content, 0, $x)));
         $any = \trim(\preg_replace('/^\s*(\x{000C}|&#(12|x[cC]);)\s*<\/[a-z\d:-]+>/i', "", \substr($content, $x)));
-        // <https://www.w3.org/TR/dpub-aria-1.0#doc-pagebreak>
-        return $excerpt . '<span id="next:' . $this->id . '" role="doc-pagebreak"></span>' . $any;
+        // Normalize to native form feed character in the output
+        return $excerpt . "\u{000C}" . $any;
     }
-    \Hook::set('page.content', __NAMESPACE__ . "\\anchor", 2.1);
+    \Hook::set('page.content', __NAMESPACE__ . "\\next", 2.1);
 }

@@ -49,7 +49,15 @@ To show the manual page excerpt in your layout:
 <?php endforeach; ?>
 ~~~
 
-You may need to add this CSS code to make the jump target more precise:
+By default, this extension will not insert any HTML markup as the jump target. Excerpt marker will be normalized into native form feed character in the output. You can add a hook in your layout’s `index.php` file to convert the character into HTML markup to jump to:
+
+~~~ .php
+Hook::set('page.content', function($content) {
+    return strtr($content, ["\u{000C}" => '<span id="next:' . $this->id . '" role="doc-pagebreak"></span>']);
+});
+~~~
+
+You may need to add this CSS code to make the jump stop more precise:
 
 ~~~ .css
 [role='doc-pagebreak'] {
