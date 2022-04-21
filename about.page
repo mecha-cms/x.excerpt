@@ -16,18 +16,20 @@ How to enable the page excerpt manually:
 
 ~~~ .yaml
 ---
-title: Post Title
-description: Post description.
+title: Page Title
+description: Page description.
 author: Taufik Nurrohman
 type: Markdown
 ...
 
 This paragraph is going to be the page excerpt.
 
-<!-- cut -->
+&#12;
 
 Rest of the page content goes here.
 ~~~
+
+You can also use `&#xC;` to limit the manual page excerpt length.
 
 To show the manual page excerpt in your layout:
 
@@ -45,4 +47,12 @@ To show the manual page excerpt in your layout:
     </p>
   </article>
 <?php endforeach; ?>
+~~~
+
+You may need to add this CSS code to make the jump target more precise:
+
+~~~ .css
+[role='doc-pagebreak'] {
+  display: block;
+}
 ~~~

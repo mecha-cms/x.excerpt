@@ -10,6 +10,7 @@ Release Notes
 
 ### 1.1.0
 
+ - [x] Changed the excerpt marker character which was previously a `<!-- cut -->` to `&#12;` or `&#xC;`.
  - [x] Updated for Mecha 3.0.0.
 
 ### 1.0.10
