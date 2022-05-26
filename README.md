@@ -10,8 +10,8 @@ Release Notes
 
 ### 1.1.0
 
- - [x] Changed the excerpt marker character which was previously a `<!-- cut -->` to `&#12;` or `&#xC;`, to be normalized into native form feed character in the output which later can be replaced with custom HTML markup by the layout maker to be used as a jump target.
- - [x] Updated for Mecha 3.0.0.
+ - Changed the excerpt marker character which was previously a `<!-- cut -->` to `&#12;` or `&#xC;`, to be normalized into native form feed character in the output which later can be replaced with custom HTML markup by the layout maker to be used as a jump target.
+ - Updated for Mecha 3.0.0.
 
 ### 1.0.10
 
