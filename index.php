@@ -24,7 +24,8 @@ namespace x\excerpt {
         if (!$content) {
             return $content;
         }
-        if (!$x = \strpos($content, "\f") ?: \strpos($content, '&#12;') ?: \stripos($content, '&#xC;')) {
+        $x = \strpos($content, "\f") ?: \strpos($content, '&#12;') ?: \stripos($content, '&#xC;');
+        if (!$x) {
             return $content;
         }
         // Normalize `&#12;` and `&#xC;` to a literal `\f`, also, remove the surrounding HTML element if any (usually a paragraph element)
