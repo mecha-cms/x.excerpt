@@ -53,7 +53,7 @@ By default, this extension will not insert any HTML markup as the jump target. E
 
 ~~~ .php
 if ($site->is('page')) {
-    Hook::set('page.content', function($content) {
+    Hook::set('page.content', function ($content) {
         return strtr($content, ["\f" => '<hr id="next:' . $this->id . '" role="doc-pagebreak">']);
     });
 }
