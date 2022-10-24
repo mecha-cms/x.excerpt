@@ -33,7 +33,7 @@ You can also use `&#xC;` to limit the manual page excerpt length.
 
 To show the manual page excerpt in your layout:
 
-~~~ .html
+~~~ .html.php
 <?php foreach ($pages as $page): ?>
   <article>
     <h3>
