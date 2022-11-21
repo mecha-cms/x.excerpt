@@ -24,11 +24,11 @@ namespace x\excerpt {
         if (!$content) {
             return $content;
         }
-        $x = \strpos($content, "\f") ?: \strpos($content, '&#12;') ?: \stripos($content, '&#xC;');
+        $x = \strpos($content, "\f") ?: \strpos($content, '&#12;') ?: \stripos($content, '&#xc;');
         if (!$x) {
             return $content;
         }
-        // Normalize `&#12;` and `&#xC;` to a literal `\f`, also, remove the surrounding HTML element if any (usually a paragraph element)
+        // Normalize `&#12;` and `&#xc;` to a literal `\f`, also, remove the surrounding HTML element if any (usually a paragraph element)
         return \preg_replace('/\s*<([a-z\d:-]+)(?:\s[^>]*)?>\s*(?:[\f]|&#(?:12|x[cC]);)\s*<\/\1>\s*|\s*(?:[\f]|&#(?:12|x[cC]);)\s*/', "\f", $content);
     }
     \Hook::set('page.content', __NAMESPACE__ . "\\next", 2.1);
