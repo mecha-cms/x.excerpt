@@ -27,7 +27,7 @@ This paragraph is going to be the page excerpt.
 Rest of the page content goes here.
 ~~~
 
-You can also use `&#xC;` to limit the manual page excerpt length.
+You can also use `&#xc;` to limit the manual page excerpt length.
 
 To show the manual page excerpt in your layout:
 
