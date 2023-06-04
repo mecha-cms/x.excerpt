@@ -1,6 +1,6 @@
 <?php
 
-namespace x {
+namespace x\excerpt\page {
     function excerpt($excerpt) {
         // `excerpt` data has been set
         if ($excerpt) {
