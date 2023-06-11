@@ -10,7 +10,8 @@ version: 1.1.0
 
 ### Usage
 
-How to enable the page excerpt manually:
+To manually activate the page excerpt, insert a `&#12;` or `&#xc;` HTML entity at a specific line where you want to mark
+the end of the manual page excerpt:
 
 ~~~ .yaml
 ---
@@ -20,16 +21,14 @@ author: Taufik Nurrohman
 type: Markdown
 ...
 
-This paragraph is going to be the page excerpt.
+This part will be the page excerpt.
 
 &#12;
 
 Rest of the page content goes here.
 ~~~
 
-You can also use `&#xc;` to limit the manual page excerpt length.
-
-To show the manual page excerpt in your layout:
+To display the manual page excerpt in your layout:
 
 ~~~ .html.php
 <?php foreach ($pages as $page): ?>
@@ -39,7 +38,7 @@ To show the manual page excerpt in your layout:
     </h3>
     <?= $page->excerpt; ?>
     <p>
-      <a href="<?= $page->url; ?>#next:<?= $page->id; ?>">
+      <a href="<?= eat($page->url . '#next:' . $page->id); ?>">
         <?= i('Read More'); ?>
       </a>
     </p>
@@ -47,13 +46,16 @@ To show the manual page excerpt in your layout:
 <?php endforeach; ?>
 ~~~
 
-By default, this extension will not insert any HTML markup as the jump target. Excerpt marker will be normalized into
+By default, this extension will not insert HTML markup as a jump target. The excerpt marker will be normalized to the
 native form feed character in the output. You can add a hook in your layout’s `index.php` file to convert the character
-into HTML markup to jump to:
+into your desired HTML markup to jump to:
 
 ~~~ .php
 if ($site->is('page')) {
     Hook::set('page.content', function ($content) {
+        if (!$content) {
+            return $content;
+        }
         return strtr($content, ["\f" => '<hr id="next:' . $this->id . '" role="doc-pagebreak">']);
     });
 }

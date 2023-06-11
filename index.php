@@ -17,7 +17,7 @@ function page__excerpt($excerpt) {
     if ($excerpt) {
         return $excerpt; // Return the initial value
     }
-    $content = $this->content;
+    $content = $this->content ?? "";
     $exist = \strpos($content, "\f");
     // Page’s `content` is empty or excerpt marker does not exist, return the page’s `description`
     if (!$content || !$exist) {
